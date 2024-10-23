@@ -1,9 +1,14 @@
-doctype html
-html
-    head
+extends ../../layouts/default.pug 
+include ../../mixins/box-head.pug
 
-        title Danh sách tour
+block main
+    .container.my-3 
+        .row 
+            .col-12 
+                +box-head(pageTitle)
 
-    body
+        .row
+            ul 
+                each item in tours
+                    li #{item.title}
 
-        h1 Trang Danh sách tour
