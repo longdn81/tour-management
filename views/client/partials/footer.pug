@@ -1,2 +1,53 @@
+//- footer.footer
+//-     | Copyright DNL 2024
+
 footer.footer
-    | Copyright DNL 2024
+    .container
+        .row
+            //- Thông tin liên hệ
+            .col-4
+                h4 Liên hệ
+                p 
+                    i.fa.fa-map-marker
+                    |  123 Đường ABC, Quận 1, TP.HCM
+                p 
+                    i.fa.fa-phone
+                    |  +84 123 456 789
+                p 
+                    i.fa.fa-envelope
+                    |  info@tourdulich.com
+
+            //- Liên kết nhanh
+            .col-4
+                h4 Liên kết nhanh
+                ul.quick-links
+                    li
+                        a(href="/") Trang chủ
+                    li
+                        a(href="/tours") Tour du lịch
+                    li
+                        a(href="/about") Về chúng tôi
+                    li
+                        a(href="/contact") Liên hệ
+
+            //- Mạng xã hội và bản tin
+            .col-4
+                h4 Kết nối với chúng tôi
+                ul.social-icons
+                    li 
+                        a(href="#")
+                            <i class="fa-brands fa-facebook"></i>
+                    li 
+                        a(href="#")
+                            <i class="fa-brands fa-instagram"></i>
+                    li 
+                        a(href="#")
+                            <i class="fa-brands fa-tiktok"></i>
+                h4 Đăng ký nhận bản tin
+                form(action="/newsletter" method="POST")
+                    input(type="email" name="email" placeholder="Nhập email của bạn")
+                    button(type="submit") Đăng ký
+
+        //- Bản quyền
+        .footer-bottom
+            p  Copyright DNL 2024
