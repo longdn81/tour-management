@@ -8,6 +8,10 @@ dotenv.config();
 const app: Express = express();
 const port: number | string = process.env.PORT || 3000;
 
+// body parser
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use(express.static("public"));
 
 app.set('views', `./views`)

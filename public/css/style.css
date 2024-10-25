@@ -27,41 +27,7 @@ body {
     padding: 20px;
 }
 
-/* Tùy chỉnh cho các link */
-a {
-    text-decoration: none;
-    color: #007bff;
-    transition: color 0.3s ease;
-}
 
-a:hover {
-    color: #ff9900;
-    /* Màu nổi bật khi rê chuột qua */
-}
-
-/* Định dạng cho các tiêu đề */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 20px 0;
-    color: #333;
-    font-weight: bold;
-}
-
-h1 {
-    font-size: 36px;
-    color: #007bff;
-    /* Màu chính của tiêu đề */
-}
-
-/* Căn chỉnh văn bản */
-p {
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
 
 /* Điều chỉnh padding của phần tử chính */
 .container {
@@ -660,3 +626,61 @@ p {
 }
 
 /* end alert */
+
+/* form-order */
+/* Form Labels */
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+
+}
+
+/* Form Inputs */
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+    transition: border-color 0.3s;
+    /* Smooth transition for border */
+}
+
+/* Focused Input Styles */
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    /* Highlight border color */
+    outline: none;
+    /* Remove default outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+    /* Subtle focus shadow */
+}
+
+/* Textarea */
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+    /* Provide a base height */
+}
+
+/* Form Button */
+.form-group button.btn-success {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-group button.btn-success:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+/*end form-order */

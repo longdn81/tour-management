@@ -1,0 +1,65 @@
+extends ../../layouts/default.pug 
+include ../../mixins/box-head.pug
+
+block main
+    .container.my-3 
+        .row 
+            .col-12 
+                +box-head(pageTitle)
+
+        .row
+            .col-12
+                table(class="table table-bordered")
+                    thead
+                        tr
+                            th STT
+                            th Ảnh
+                            th Tên
+                            th Giá
+                            th Số lượng
+                            th Tổng tiền
+                            th Hành động
+
+                    tbody(list-tour)
+
+                h5(class="text-right mb-4") Tổng đơn hàng : <span total-price>0</span> đ
+                
+        .row
+            .col-12
+                +box-head('Thông tin khách hàng')
+            
+                form(form-order)
+                    div(class="form-group")
+                        label(for="fullName") Họ tên
+                        input(
+                            class = "form-group"
+                            type="text" 
+                            id="fullName" 
+                            name="fullName" 
+                            required
+                        )
+
+                    div(class="form-group")
+                        label(for="phone") Số điện thoại
+                        input(
+                            class = "form-group"
+                            type="text" 
+                            id="phone" 
+                            name="phone" 
+                            required
+                        )
+                    div(class="form-group")
+                        label(for="note") Ghi chú
+                        textarea(
+                            class = "form-group"
+                            id="note" 
+                            name="note" 
+                            rows="2"
+                        )
+
+                    div(class="form-group")
+                        button.btn.btn-success.btn-block(type="submit") ĐẶT TOUR
+
+
+block script
+    script(src="/js/cart.js") 
