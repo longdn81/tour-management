@@ -13,7 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Đảm bảo body luôn có ít nhất chiều cao của màn hình */
-    background: url('https://i.vnbusiness.vn/2024/04/09/-3921-1712644640_860x0.jpg') no-repeat center center fixed; /* Hình nền du lịch */
+    /* background: url('https://i.vnbusiness.vn/2024/04/09/-3921-1712644640_860x0.jpg') no-repeat center center fixed; Hình nền du lịch */
     background-size: cover;
     color: #333; /* Màu chữ mặc định */
 }
@@ -412,7 +412,7 @@ p {
     position: relative;
 }
 
-.inner-suggest {
+.box-search .inner-suggest {
     position: absolute;
     top: 100%;
     left: 0;
@@ -431,13 +431,13 @@ p {
 }
 
 
-.inner-list {
+.box-search .inner-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.inner-item {
+.box-search .inner-item {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
@@ -446,11 +446,11 @@ p {
     
 }
 
-.inner-item:last-child {
+.box-search .inner-item:last-child {
     margin-bottom: 0;
 }
 
-.inner-image img {
+.box-search .inner-image img {
     width: 50px;
     height: 50px;
     border-radius: 8px;
@@ -458,12 +458,12 @@ p {
     margin-right: 10px;
 }
 
-.inner-info {
+.box-search .inner-info {
     display: flex;
     flex-direction: column;
 }
 
-.inner-title {
+.box-search .inner-title {
     font-size: 14px;
     font-weight: bold;
     color: #4a148c;
@@ -482,3 +482,126 @@ p {
 
 /*End  search */
 
+/* detail tour */
+/* Base styling */
+.tour-detail {
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+/* .container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.col-6, .col-12 {
+    box-sizing: border-box;
+    padding: 10px;
+} */
+
+/* Left side with images */
+.tour-detail .inner-image {
+    /* display: flex; */
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.tour-detail .inner-image img {
+    max-width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Right side details */
+.tour-detail .inner-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.tour-detail .inner-barcode, .inner-stock , .inner-time-start {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.tour-detail .inner-price-special {
+    font-size: 1.4em;
+    color: #e74c3c;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.tour-detail .inner-price {
+    font-size: 1em;
+    color: #888;
+    text-decoration: line-through;
+    margin-bottom: 5px;
+}
+
+.tour-detail .inner-percent {
+    font-size: 0.9em;
+    color: #27ae60;
+    margin-bottom: 15px;
+}
+
+.tour-detail form {
+    margin-top: 20px;
+}
+
+.tour-detail input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.tour-detail button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tour-detail button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Tour information section */
+.tour-detail .inner-information {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.tour-detail .inner-label {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #dd1b1b;
+    margin-bottom: 10px;
+}
+
+.tour-detail .inner-text {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* end detail tour */

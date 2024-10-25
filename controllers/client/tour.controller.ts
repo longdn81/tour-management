@@ -1,7 +1,8 @@
 import { Request, Response } from "express";
-// import Tour from "../../models/tour.model";
+import Tour from "../../models/tour.model";
 import sequelize from "../../config/database";
 import { QueryTypes } from "sequelize";
+import { console } from "inspector";
 
 //[GET] /tours/:slug
 export const index =  async (req: Request, res: Response) => { 
@@ -52,5 +53,29 @@ export const index =  async (req: Request, res: Response) => {
     res.render("client/pages/tours/index" , {
         tours : tours,
         pageTitle : "danh sach tour"
+    }); 
+};
+
+
+// [GET]/tours/detail/:slug Tour
+export const detail = async (req: Request, res: Response) => {
+    const slugTour = req.params.slugTour;
+    let tourDetail = await Tour.findOne({
+        where: { 
+            slug: slugTour, 
+            deleted: false, 
+            status: "active" 
+        }, raw: true 
+    });
+    
+    if(tourDetail[`images`]){
+        tourDetail[`images`] = JSON.parse(tourDetail[`images`]) ;
+    }
+    
+    tourDetail[`price_special`] = tourDetail[`price`] * (1- tourDetail[`discount`]/100 )
+    
+    res.render("client/pages/tours/detail" , {
+        pageTitle : "Chi tiết tour",
+        tourDetail :tourDetail 
     }); 
 };
