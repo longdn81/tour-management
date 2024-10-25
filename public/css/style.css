@@ -12,15 +12,18 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Đảm bảo body luôn có ít nhất chiều cao của màn hình */
+    min-height: 100vh;
+    /* Đảm bảo body luôn có ít nhất chiều cao của màn hình */
     /* background: url('https://i.vnbusiness.vn/2024/04/09/-3921-1712644640_860x0.jpg') no-repeat center center fixed; Hình nền du lịch */
     background-size: cover;
-    color: #333; /* Màu chữ mặc định */
+    color: #333;
+    /* Màu chữ mặc định */
 }
 
 /* Đảm bảo phần chính chiếm tối thiểu phần lớn chiều cao */
 .main-content {
-    flex: 1; /* Đẩy footer xuống dưới */
+    flex: 1;
+    /* Đẩy footer xuống dưới */
     padding: 20px;
 }
 
@@ -32,11 +35,17 @@ a {
 }
 
 a:hover {
-    color: #ff9900; /* Màu nổi bật khi rê chuột qua */
+    color: #ff9900;
+    /* Màu nổi bật khi rê chuột qua */
 }
 
 /* Định dạng cho các tiêu đề */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 20px 0;
     color: #333;
     font-weight: bold;
@@ -44,7 +53,8 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-size: 36px;
-    color: #007bff; /* Màu chính của tiêu đề */
+    color: #007bff;
+    /* Màu chính của tiêu đề */
 }
 
 /* Căn chỉnh văn bản */
@@ -330,10 +340,10 @@ p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
-  
-  /* Card styling */
-  .card {
+}
+
+/* Card styling */
+.card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -344,55 +354,58 @@ p {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color: #fff;
     margin: 10px
-  }
-  
-  .card:hover {
+}
+
+.card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Image styling */
-  .card img {
+}
+
+/* Image styling */
+.card img {
     width: 500px;
     height: 200px;
     object-fit: cover;
-  }
-  
-  /* Card body styling */
-  .card-body {
+}
+
+/* Card body styling */
+.card-body {
     padding: 15px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
-  
-  /* Card title */
-  .card-title {
+}
+
+/* Card title */
+.card-title {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
     color: #333;
-  }
-  
-  /* Price styling */
-  .card-body b {
+}
+
+/* Price styling */
+.card-body b {
     font-size: 20px;
-    color: #ff5722; /* Special price color */
-  }
-  
-  .card-body del {
-    color: #999; /* Old price color */
+    color: #ff5722;
+    /* Special price color */
+}
+
+.card-body del {
+    color: #999;
+    /* Old price color */
     margin-left: 10px;
-  }
-  
-  .card-body p {
+}
+
+.card-body p {
     font-size: 16px;
-    color: #28a745; /* Discount color */
-  }
-  
-  /* Button styling */
-  .card-body .btn {
+    color: #28a745;
+    /* Discount color */
+}
+
+/* Button styling */
+.card-body .btn {
     align-self: center;
     margin-top: 15px;
     background-color: #007bff;
@@ -400,12 +413,12 @@ p {
     padding: 10px 20px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-  }
-  
-  .card-body .btn:hover {
+}
+
+.card-body .btn:hover {
     background-color: #0056b3;
-  }
-  
+}
+
 /* end detail tour */
 /* search */
 .box-search {
@@ -443,7 +456,7 @@ p {
     margin-bottom: 10px;
     text-decoration: none;
     padding: 5px;
-    
+
 }
 
 .box-search .inner-item:last-child {
@@ -528,7 +541,9 @@ p {
     color: #007bff;
 }
 
-.tour-detail .inner-barcode, .inner-stock , .inner-time-start {
+.tour-detail .inner-barcode,
+.inner-stock,
+.inner-time-start {
     font-size: 0.9em;
     color: #555;
     margin-bottom: 5px;
@@ -605,3 +620,43 @@ p {
 }
 
 /* end detail tour */
+
+/* // alert */
+
+[alert-add-cart-success] {
+    position: fixed;
+    top: 70px;
+    right: 15px;
+    z-index: 9999;
+}
+
+[alert-add-cart-success].alert-hidden {
+    animation-name: alert-hidden;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+
+@keyframes alert-hidden {
+    from {
+        right: 15px;
+    }
+
+    to {
+        right: -100%;
+        display: none;
+    }
+}
+
+[alert-add-cart-success] [close-alert] {
+    background: #ffffffc4;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* end alert */
