@@ -40,9 +40,11 @@ const showMiniCart = () => {
     const miniCart = document.querySelector('[mini-cart]');
     if(miniCart){
         const cart = JSON.parse(localStorage.getItem("cart"));
-        const totalQuantity = cart.reduce((sum,item) => sum + item.quantity , 0) ;
+        if(cart){
+            const totalQuantity = cart.reduce((sum,item) => sum + item.quantity , 0) ;
+            miniCart.innerHTML=totalQuantity;
+        }
         
-        miniCart.innerHTML=totalQuantity;
     }
 }
  
