@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import Tour from "../../models/tour.model";
 import sequelize from "../../config/database";
 import { QueryTypes } from "sequelize";
-import { console } from "inspector";
 
 //[GET] /tours/:slug
 export const index =  async (req: Request, res: Response) => { 

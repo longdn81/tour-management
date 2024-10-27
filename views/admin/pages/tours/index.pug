@@ -1,0 +1,82 @@
+extends ../../layout/default.pug 
+
+block main
+    h1(class = "mb-4") #{pageTitle}
+    
+    .card.mb-3
+        .card-header Danh sach
+        .card-body
+            .row
+                .col-8 
+                    //- +form-change-multi(`${prefixAdmin}/tours-category/change-multi?_method=PATCH `)
+                .col-4.text-right
+                    a(
+                        href=`${prefixAdmin}/tours/create `
+                        class="btn btn-outline-success"
+                    ) + Thêm mới
+
+            table(
+                    class="table table-hover table-sm"
+                    checkbox-multi 
+                )
+                thead
+                    tr
+                        th STT
+                        th Hình ảnh
+                        th Tiêu đề
+                        th Giá
+                        th % Giảm giá
+                        th Giá đặc biệt
+                        th còn lại
+                        th Trạng thái
+                        th Vị trí
+                        th Hành động
+                tbody
+                    each item, index  in tours
+                        tr
+                            td 
+                                |#{index +1}
+                            td
+                                img(
+                                src= item.image
+                                alt= item.title
+                                width="100px"
+                                height="auto"
+                                )
+                            td #{item.title}
+                            td #{item.price.toLocaleString()}₫
+                            td #{item.discount}%
+                            td #{item.price_special.toLocaleString()}₫
+                            td #{item.stock}
+                            td
+                                if (item.status == "active")
+                                    a(
+                                        href="javascript:;" 
+                                        class="badge badge-success"
+                                        data-status = item.status
+                                        data-id = item.id
+                                        button-change-status 
+                                    ) Hoạt động
+                                else 
+                                    a(
+                                        href="javascript:;" 
+                                        class="badge badge-danger"
+                                        data-id = item.id
+                                        data-status = item.status
+                                        button-change-status 
+                                    ) Dừng hoạt động
+                            td #{item.position}
+                            td
+                                a(
+                                    href=`${prefixAdmin}/tours/detail/${item.id}`
+                                    class="btn btn-secondary btn-sm"
+                                ) Chi tiết 
+                                a(
+                                    href=`${prefixAdmin}/tours/edit/${item.id}`
+                                    class="btn btn-warning btn-sm"
+                                ) Sửa
+                                button(
+                                    class="btn btn-danger btn-sm ml-1" 
+                                    data-id =  item.id
+                                    button-delete 
+                                ) Xóa  
