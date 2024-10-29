@@ -6,6 +6,7 @@ block main
     form(
         action=`${prefixAdmin}/tours/create` 
         method="POST"
+        enctype="multipart/form-data"
         )
         div(class="form-group")
             label(for="title") Tiêu đề
@@ -27,7 +28,25 @@ block main
                 option(value="" disabled selected) -- Chọn danh mục --
                 each item in categories
                     option(value=item.id) #{item.title}
-                
+        div(
+            class="form-group"
+            upload-image
+        )
+            label(for="images") Ảnh
+            input(
+                type="file"
+                class="form-control-file"
+                id="images"
+                name="images"
+                accept="image/*"
+                upload-image-input
+                multiple
+            )
+            //- img(
+            //-     src=""
+            //-     upload-image-preview
+            //-     class="image-preview"
+            //- )       
         div(class="form-group")
             label(for="price")  Giá
             input(
@@ -67,6 +86,22 @@ block main
                 name="timeStart"
                 value="0"
                 min="0"
+            )
+        div(class="form-group")
+            label(for="information") Thông tin tour
+            textarea(
+                class="form-control textarea-mce"
+                id="information"
+                name="information"
+                textarea-mce
+            )
+        div(class="form-group")
+            label(for="schedule") Lịch trình tour
+            textarea(
+                class="form-control textarea-mce"
+                id="schedule"
+                name="schedule"
+                textarea-mce
             )
         div(class="form-group")
             label(for="position") Vị trí

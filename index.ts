@@ -4,6 +4,7 @@ import clientRoutes from "./routers/client/index.route";
 import moment = require("moment");
 import adminRoutes from "./routers/admin/index.route";
 import { systemConfig } from "./config/config";
+import path from 'path';
 
 
 dotenv.config();
@@ -14,6 +15,9 @@ const port: number | string = process.env.PORT || 3000;
 // body parser
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// TinyMCE
+app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
 
 app.use(express.static("public"));
 
